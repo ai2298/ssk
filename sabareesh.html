@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submarine Presentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #0d1a2f;
+            color: #e0f2f7;
+            overflow-x: hidden;
+            scroll-snap-type: y mandatory;
+        }
+
+        .slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            background: radial-gradient(circle at center, #0a1420 0%, #0d1a2f 70%, #04080c 100%);
+            box-sizing: border-box;
+            padding: 20px;
+            scroll-snap-align: start;
+        }
+
+        .porthole-container {
+            width: 80%;
+            max-width: 900px;
+            aspect-ratio: 16 / 9;
+            border-radius: 20px;
+            background-color: rgba(10, 20, 30, 0.7);
+            border: 10px solid #5a6b7c;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(255, 255, 255, 0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        .porthole-container::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            border: 5px solid #3c4a5c;
+            border-radius: 30px;
+            pointer-events: none;
+        }
+
+        h1, h2, h3 {
+            color: #c9e0ed;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 { font-size: 3em; }
+        h2 { font-size: 2.2em; }
+        h3 { font-size: 1.8em; }
+
+        p, ul, ol {
+            font-size: 1.2em;
+            line-height: 1.6;
+            max-width: 80%;
+            margin-bottom: 1em;
+            text-align: left;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            list-style-type: square;
+        }
+
+        .bubble {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            opacity: 0;
+            animation: rise 10s infinite ease-in;
+        }
+
+        .bubble:nth-child(1) { width: 15px; height: 15px; left: 10%; bottom: -10%; animation-delay: 0s; }
+        .bubble:nth-child(2) { width: 25px; height: 25px; left: 30%; bottom: -15%; animation-delay: 2s; }
+        .bubble:nth-child(3) { width: 10px; height: 10px; left: 50%; bottom: -5%; animation-delay: 4s; }
+        .bubble:nth-child(4) { width: 20px; height: 20px; left: 70%; bottom: -20%; animation-delay: 6s; }
+        .bubble:nth-child(5) { width: 30px; height: 30px; left: 90%; bottom: -25%; animation-delay: 8s; }
+
+        @keyframes rise {
+            0% { transform: translateY(0); opacity: 0; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+
+        button {
+            background-color: #1f3d5a;
+            color: #e0f2f7;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2a4f72;
+        }
+
+        input[type="radio"] {
+            transform: scale(1.3);
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="slide">
+        <div class="porthole-container">
+            <h1>Voyage to Discovery: INS Vajra</h1>
+            <p>Welcome aboard, fellow deep-sea explorers! Prepare to dive into an insightful journey.</p>
+            <h3>Presented by: Sabareesh & Hirendraa</h3>
+        </div>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    </div>
+
+    <div class="slide">
+        <div class="porthole-container">
+            <h2>Setting Sail: Our Mission</h2>
+            <p>Before we explore the depths, let's chart our course. This section will cover:</p>
+            <ul>
+                <li>The purpose of our mission</li>
+                <li>Key objectives we aim to achieve</li>
+                <li>A brief overview of what lies ahead</li>
+            </ul>
+        </div>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    </div>
+
+    <div class="slide">
+        <div class="porthole-container">
+            <h2>First Dive: Exploring Magnetic Interference</h2>
+            <p>Our first major discovery takes us to the fascinating world of <strong>Magnetic Interference Systems</strong>.</p>
+            <ol>
+                <li>Key findings and observations in this area.</li>
+                <li>Data points and evidence collected.</li>
+                <li>Initial analysis and implications.</li>
+            </ol>
+        </div>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    </div>
+
+    <div class="slide">
+        <div class="porthole-container">
+            <h2>Navigating the Trenches: Key Systems</h2>
+            <p>Exploring the deep ocean presents unique challenges. Our advanced submarine is equipped with cutting-edge technology:</p>
+            <ul>
+                <li><strong>Pressure Hull Integrity:</strong> Withstands extreme pressures.</li>
+                <li><strong>Advanced Sonar Systems:</strong> For mapping and navigation.</li>
+                <li><strong>EMF Destructor:</strong> Neutralizes electromagnetic interference.</li>
+                <li><strong>Military-Grade Laser System:</strong> Sampling and defense.</li>
+                <li><strong>Magnetic Grappling System:</strong> Attracts and secures other vessels.</li>
+                <li><strong>Emergency Separation System:</strong> Rear module ascends safely.</li>
+                <li><strong>Automated Resource Management:</strong> Efficient power use.</li>
+            </ul>
+        </div>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    </div>
+
+    <div class="slide">
+        <div class="porthole-container">
+            <h2>Surfacing: Conclusions & Next Steps</h2>
+            <p>As we conclude our voyage, let's recap our journey and look to the horizon.</p>
+            <ul>
+                <li>Summary of key takeaways.</li>
+                <li>Recommendations based on our findings.</li>
+                <li>Future research or development directions.</li>
+                <li><strong>Reminder:</strong> Our mission continues, fueled by innovation and a relentless pursuit of knowledge.</li>
+            </ul>
+            <h3>Thank you for joining our expedition!</h3>
+        </div>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    </div>
+
+    <!-- Voting Slide -->
+    <div class="slide">
+        <div class="porthole-container">
+            <h2>Vote: Your Favorite Submarine Feature</h2>
+            <p>Select the system you found most impressive:</p>
+            <form id="voteForm">
+                <label><input type="radio" name="feature" value="EMF Destructor"> EMF Destructor</label><br><br>
+                <label><input type="radio" name="feature" value="Military-Grade Laser"> Military-Grade Laser</label><br><br>
+                <label><input type="radio" name="feature" value="Magnetic Grappling System"> Magnetic Grappling System</label><br><br>
+                <label><input type="radio" name="feature" value="Emergency Separation System"> Emergency Separation System</label><br><br>
+                <label><input type="radio" name="feature" value="Sonar Systems"> Advanced Sonar Systems</label><br><br>
+                <label><input type="radio" name="feature" value="Underwater Train"> Underwater Train</label><br><br>
+                <button type="submit">Submit Vote</button>
+            </form>
+            <p id="voteResult" style="margin-top:20px; font-weight:bold; color:#a2f7c6;"></p>
+
+            <div id="voteCounts" style="margin-top: 30px; text-align: left;">
+                <h3>Live Vote Count:</h3>
+                <ul id="countList"></ul>
+            </div>
+        </div>
+        <div class="bubble"></div><div class="bubble"></div><div class="bubble"></div>
+    </div>
+
+    <script>
+        const voteCounts = {
+            "EMF Destructor": 0,
+            "Military-Grade Laser": 0,
+            "Magnetic Grappling System": 0,
+            "Emergency Separation System": 0,
+            "Sonar Systems": 0,
+            "Underwater Train": 0
+        };
+
+        function updateVoteDisplay() {
+            const countList = document.getElementById('countList');
+            countList.innerHTML = '';
+            for (const feature in voteCounts) {
+                const li = document.createElement('li');
+                li.textContent = `${feature}: ${voteCounts[feature]} vote(s)`;
+                countList.appendChild(li);
+            }
+        }
+
+        document.getElementById('voteForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const selected = document.querySelector('input[name="feature"]:checked');
+            const result = document.getElementById('voteResult');
+            if (selected) {
+                const choice = selected.value;
+                voteCounts[choice]++;
+                result.textContent = `You voted for: ${choice}. Thank you for your feedback! 🌊`;
+                updateVoteDisplay();
+            } else {
+                result.textContent = 'Please select a feature before submitting your vote.';
+            }
+        });
+
+        updateVoteDisplay();
+    </script>
+
+</body>
+</html>
